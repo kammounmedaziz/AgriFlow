@@ -1,0 +1,16 @@
+Agriflow\Models\enums\AnimalHealthStatus.class
+Agriflow\Models\enums\CropType.class
+Agriflow\Models\enums\IrrigationType.class
+Agriflow\mainfx.class
+Agriflow\Models\enums\GrowthStage.class
+Agriflow\Service\IService.class
+Agriflow\Util\MyConnections.class
+Agriflow\Models\enums\AnimalSpecies.class
+Agriflow\Models\enums\FieldUseType.class
+Agriflow\Models\Animal.class
+Agriflow\Models\Culture.class
+Agriflow\Models\enums\SoilType.class
+Agriflow\Service\ServiceAnimal.class
+Agriflow\Test\Main.class
+Agriflow\Models\enums\AnimalIdentificationType.class
+Agriflow\Models\Champ.class
