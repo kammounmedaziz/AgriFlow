@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            stylesheets="@choiceuser.css"
+            prefHeight="600.0" prefWidth="1000.0">
+
+    <!-- Arrière-plan -->
+    <ImageView fitWidth="1000" preserveRatio="true" opacity="0.9">
+        <Image url="@../images/background.jpg" />
+        <viewport>
+            <Rectangle2D width="1000" height="600"/>
+        </viewport>
+    </ImageView>
+
+    <!-- Couche de contenu -->
+    <Pane style="-fx-background-color: rgba(255, 255, 255, 0.2);" prefWidth="1000" prefHeight="600">
+
+        <!-- Conteneur principal -->
+        <VBox alignment="CENTER" spacing="30" prefWidth="1000" layoutY="50">
+            <Label text="SÉLECTION D'UTILISATEUR" styleClass="main-title"/>
+
+            <!-- Grille modifiée 3 + 2 -->
+            <GridPane alignment="CENTER" hgap="15" vgap="20">
+                <columnConstraints>
+                    <ColumnConstraints prefWidth="180"/>
+                    <ColumnConstraints prefWidth="180"/>
+                    <ColumnConstraints prefWidth="180"/>
+                </columnConstraints>
+
+                <!-- Première ligne - 3 utilisateurs -->
+                <VBox styleClass="user-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <ImageView fitWidth="100" fitHeight="100" styleClass="user-image">
+                        <Image url="@user1.png"/>
+                    </ImageView>
+                    <Label text="Agriculteur" styleClass="user-name"/>
+                    <Button text="Sélectionner" styleClass="select-button"/>
+                </VBox>
+
+                <VBox styleClass="user-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <ImageView fitWidth="100" fitHeight="100" styleClass="user-image">
+                        <Image url="@user2.png"/>
+                    </ImageView>
+                    <Label text="Vétérinaire" styleClass="user-name"/>
+                    <Button text="Sélectionner" styleClass="select-button"/>
+                </VBox>
+
+                <VBox styleClass="user-card" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                    <ImageView fitWidth="100" fitHeight="100" styleClass="user-image">
+                        <Image url="@user3.png"/>
+                    </ImageView>
+                    <Label text="Ingenieur" styleClass="user-name"/>
+                    <Button text="Sélectionner" styleClass="select-button"/>
+                </VBox>
+
+                <!-- Deuxième ligne - 2 utilisateurs -->
+                <VBox styleClass="user-card" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2">
+                    <ImageView fitWidth="100" fitHeight="100" styleClass="user-image">
+                        <Image url="@user4.png"/>
+                    </ImageView>
+                    <Label text="Admin" styleClass="user-name"/>
+                    <Button text="Sélectionner" styleClass="select-button"/>
+                </VBox>
+
+                <VBox styleClass="user-card" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <ImageView fitWidth="100" fitHeight="100" styleClass="user-image">
+                        <Image url="@user5.png"/>
+                    </ImageView>
+                    <Label text="Client" styleClass="user-name"/>
+                    <Button text="Sélectionner" styleClass="select-button"/>
+                </VBox>
+            </GridPane>
+        </VBox>
+    </Pane>
+</AnchorPane>
