@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Agriflow.FrontEnd.SignupLogin.Login"
+            prefHeight="600.0" prefWidth="1000.0"
+            stylesheets="@login-style.css">
+
+    <!-- Arrière-plan ajusté -->
+    <ImageView fitWidth="1000" preserveRatio="true" opacity="0.9">
+        <Image url="@../images/background.jpg" />
+
+    </ImageView>
+
+    <!-- Couche semi-transparente -->
+    <Pane style="-fx-background-color: rgba(255, 255, 255, 0.2);" prefWidth="1000" prefHeight="600">
+
+        <!-- Conteneur principal -->
+        <Pane prefHeight="600.0" prefWidth="1000.0" styleClass="container">
+            <!-- Icône de feuille gauche -->
+            <ImageView fitHeight="80" fitWidth="80" layoutX="100" layoutY="50"
+                       styleClass="leaf-icon">
+                <Image url="@../images/leaf-icon.png" />
+            </ImageView>
+
+            <!-- Boîte de connexion -->
+            <Pane layoutX="350" layoutY="100" prefHeight="400" prefWidth="300" styleClass="login-box">
+                <!-- Contenu centré -->
+                <VBox alignment="CENTER" spacing="15" layoutX="35" layoutY="40" prefWidth="230">
+                    <Label text="CONNEXION AGRI" styleClass="login-title"/>
+                    <Label text="Bienvenue dans l'agriculture intelligente" styleClass="welcome-text"/>
+
+                    <TextField fx:id="usernameField" prefHeight="40" prefWidth="230"
+                               promptText="Identifiant agricole" styleClass="text-field"/>
+
+                    <PasswordField fx:id="passwordField" prefHeight="40" prefWidth="230"
+                                   promptText="Mot de passe" styleClass="text-field"/>
+
+                    <Button fx:id="loginButton" mnemonicParsing="false" prefHeight="40"
+                            prefWidth="230" text="Se connecter" styleClass="login-button"/>
+
+                    <Hyperlink fx:id="createAccountLink" text="Créer un compte" styleClass="create-account"/>
+                </VBox>
+
+                <!-- Décoration basse -->
+                <Line layoutX="0" layoutY="340" startX="30" endX="270" styleClass="soil-line"/>
+
+                <!-- Icône de feuille bas -->
+                <ImageView fitHeight="40" fitWidth="40" layoutX="130" layoutY="325"
+                           styleClass="leaf-icon">
+                    <Image url="@../images/leaf-icon.png" />
+                </ImageView>
+            </Pane>
+        </Pane>
+    </Pane>
+</AnchorPane>
