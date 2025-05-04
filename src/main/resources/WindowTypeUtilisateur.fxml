@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" stylesheets="@gestions/ferme/CSS/choiceuser.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestions.ferme.controllers.WindowTypeUtilisateurController">
+    <!-- Arrière-plan -->
+    <ImageView fitWidth="1000" opacity="0.9" preserveRatio="true">
+        <Image url="@../java/gestions/ferme/images/background.jpg" />
+        <viewport>
+            <Rectangle2D height="600" width="1000" />
+        </viewport>
+    </ImageView>
+
+    <!-- Couche de contenu -->
+    <Pane prefHeight="600" prefWidth="1000" style="-fx-background-color: rgba(255, 255, 255, 0.2);">
+
+        <!-- Conteneur principal -->
+        <VBox alignment="CENTER" layoutY="50" prefWidth="1000" spacing="30">
+            <Label styleClass="main-title" text="SÉLECTION D'UTILISATEUR" />
+
+            <!-- Grille modifiée 3 + 2 -->
+            <GridPane alignment="CENTER" hgap="15" vgap="20">
+                <columnConstraints>
+                    <ColumnConstraints prefWidth="180" />
+                    <ColumnConstraints prefWidth="180" />
+                    <ColumnConstraints prefWidth="180" />
+                </columnConstraints>
+
+                <!-- Première ligne - 3 utilisateurs -->
+                <VBox styleClass="user-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <ImageView fitHeight="100" fitWidth="100" styleClass="user-image">
+                        <Image url="@../java/gestions/ferme/images/agricule.jpeg"/>
+                    </ImageView>
+                    <Label styleClass="user-name" text="Agriculteur" />
+                    <Button fx:id="idUtFermier" onAction="#VerifierExistantFermier" styleClass="select-button" text="Sélectionner" />
+                </VBox>
+
+                <VBox styleClass="user-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <ImageView fitHeight="100" fitWidth="100" styleClass="user-image">
+                        <Image url="@../java/gestions/ferme/images/vétérinaire.jpeg"/>
+                    </ImageView>
+                    <Label styleClass="user-name" text="Vétérinaire" />
+                    <Button fx:id="idUtVeterenaire" onAction="#VerifierExistantVeterinaire" styleClass="select-button" text="Sélectionner" />
+                </VBox>
+
+                <VBox styleClass="user-card" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                    <ImageView fitHeight="100" fitWidth="100" styleClass="user-image">
+                        <Image url="@../java/gestions/ferme/images/ingenieur.jpeg"/>
+                    </ImageView>
+                    <Label styleClass="user-name" text="Ingenieur" />
+                    <Button fx:id="idUtIng" onAction="#VerifierExistantIngenier" styleClass="select-button" text="Sélectionner" />
+                </VBox>
+
+                <!-- Deuxième ligne - 2 utilisateurs -->
+                <VBox styleClass="user-card" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                    <ImageView fitHeight="100" fitWidth="100" styleClass="user-image">
+                        <Image url="@../java/gestions/ferme/images/admin.jpeg"/>
+                    </ImageView>
+                    <Label styleClass="user-name" text="Admin" />
+                    <Button fx:id="idUtAdmin" onAction="#VerifierExistantAdmin" styleClass="select-button" text="Sélectionner" />
+                </VBox>
+
+                <VBox styleClass="user-card" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <ImageView fitHeight="100" fitWidth="100" styleClass="user-image">
+                        <Image url="@../java/gestions/ferme/images/client.jpeg"/>
+                    </ImageView>
+                    <Label styleClass="user-name" text="Client" />
+                    <Button fx:id="idUtClient" onAction="#VerifierExistantClient" styleClass="select-button" text="Sélectionner" />
+                </VBox>
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
+            </GridPane>
+        </VBox>
+    </Pane>
+</AnchorPane>

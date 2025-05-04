@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" stylesheets="@../java/gestions/ferme/CSS/login-style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestions.ferme.controllers.WindowLoginController">
+
+    <ImageView fitWidth="1000" opacity="0.9" preserveRatio="true">
+        <image>
+            <Image url="@../java/gestions/ferme/images/background.jpg" />
+        </image>
+    </ImageView>
+
+    <Pane prefHeight="600" prefWidth="1000" style="-fx-background-color: rgba(255, 255, 255, 0.2);">
+
+        <Pane layoutY="-21.0" prefHeight="600.0" prefWidth="1000.0" styleClass="container">
+            <ImageView fitHeight="80" fitWidth="80" layoutX="100" layoutY="50" styleClass="leaf-icon">
+                <image>
+                    <Image url="@../java/gestions/ferme/images/leaf-icon.png" />
+                </image>
+            </ImageView>
+
+            <Pane layoutX="350" layoutY="100" prefHeight="400" prefWidth="300" styleClass="login-box">
+                <VBox alignment="CENTER" layoutX="35" layoutY="40" prefWidth="230" spacing="15">
+                    <Label styleClass="login-title" text="CONNEXION AGRI" />
+                    <Label styleClass="welcome-text" text="Bienvenue dans l'agriculture intelligente" />
+                    <TextField fx:id="idUtAuth" promptText="Identifiant agricole" styleClass="text-field" />
+                    <PasswordField fx:id="pwdUtAuth" promptText="Mot de passe" styleClass="text-field" />
+                    <Button fx:id="btnLogin" onAction="#Authentifier" styleClass="login-button" text="Se connecter" />
+                    <Hyperlink fx:id="createAccountLink" styleClass="create-account" text="Créer un compte" />
+                </VBox>
+
+                <Line endX="270" layoutX="0" layoutY="340" startX="30" styleClass="soil-line" />
+
+                <ImageView fitHeight="40" fitWidth="40" layoutX="130" layoutY="325" styleClass="leaf-icon">
+                    <image>
+                        <Image url="@../java/gestions/ferme/images/leaf-icon.png" />
+                    </image>
+                </ImageView>
+            </Pane>
+        </Pane>
+    </Pane>
+</AnchorPane>

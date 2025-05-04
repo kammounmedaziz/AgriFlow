@@ -1,0 +1,39 @@
+/* Ajouts spécifiques à la grille 3+2 */
+.user-card {
+    -fx-pref-width: 160px;
+    -fx-padding: 15px;
+    -fx-spacing: 10px;
+}
+
+.user-card[column-span="2"] {
+    -fx-pref-width: 340px;
+}
+
+GridPane {
+    -fx-padding: 0 40px;
+}
+
+/* Adaptation des images */
+.user-image {
+    -fx-fit-width: 80px;
+    -fx-fit-height: 80px;
+}
+
+/* Alignement du texte */
+.user-name {
+    -fx-font-size: 14px;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+}
+
+/* Boutons ajustés */
+.select-button {
+    -fx-font-size: 13px;
+    -fx-padding: 6px 12px;
+}
+
+/* Titre principal */
+.main-title {
+    -fx-font-size: 26px;
+    -fx-padding: 0 0 20px 0;
+}
