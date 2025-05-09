@@ -1,0 +1,12 @@
+edu\connexion3b\controllers\SuppressionController.class
+edu\connexion3b\tests\HomePage.class
+edu\connexion3b\tools\Myconnection.class
+edu\connexion3b\services\Aservices.class
+edu\connexion3b\tests\MainClass.class
+edu\connexion3b\entities\Capteurs.class
+edu\connexion3b\controllers\ModificationController.class
+edu\connexion3b\controllers\Window1Controller.class
+edu\connexion3b\services\Services.class
+edu\connexion3b\entities\Analyses.class
+edu\connexion3b\controllers\AjoutANController.class
+edu\connexion3b\interfaces\IServices.class
