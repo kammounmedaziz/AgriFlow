@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="100" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PopUps.supression.MessageSupression">
+
+    <!-- Header -->
+    <HBox alignment="CENTER_LEFT" spacing="10" stylesheets="@confirmer%20supression.css" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="20">
+        <ImageView fitHeight="30" fitWidth="30" styleClass="warning-icon">
+            <!-- <Image url="@/images/warning-icon.png"/> -->
+        </ImageView>
+        <Label styleClass="popup-title" text="Confirmation de L'ajout" />
+        <styleClass>
+            <String fx:value="popup-header" />
+            <String fx:value="button-container" />
+            <String fx:value="cancel-btn" />
+            <String fx:value="confirm-btn" />
+            <String fx:value="delete-popup" />
+            <String fx:value="popup-background" />
+            <String fx:value="popup-header" />
+            <String fx:value="popup-message" />
+            <String fx:value="popup-message" />
+        </styleClass>
+    </HBox>
+
+    <!-- Content -->
+    <VBox alignment="CENTER" spacing="20" AnchorPane.bottomAnchor="80" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="70" />
+     <Label layoutX="155.0" layoutY="136.0" styleClass="popup-warning" stylesheets="@confirmer%20supression.css" textFill="WHITE" />
+     <Label contentDisplay="CENTER" layoutX="145.0" layoutY="94.0" styleClass="popup-message" stylesheets="@confirmer%20supression.css" text="L'ajout est etablie" textFill="WHITE" textOverrun="WORD_ELLIPSIS" />
+</AnchorPane>
