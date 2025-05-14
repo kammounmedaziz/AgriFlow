@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane fx:id="ticketRoot" prefHeight="500" prefWidth="400" styleClass="ticket-popup" stylesheets="facture.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+
+
+
+    <!-- Header with logo and title -->
+    <HBox alignment="CENTER" spacing="15" styleClass="ticket-header" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="20">
+        <ImageView fitHeight="40" fitWidth="40" styleClass="ticket-logo">
+            <Image url="@/images/agriflow-logo.png" />
+        </ImageView>
+        <VBox alignment="CENTER_LEFT">
+            <Label styleClass="ticket-title" text="Boutique Agriflow" />
+            <Label fx:id="dateLabel" styleClass="ticket-date" text="01/01/2023" />
+        </VBox>
+    </HBox>
+
+    <!-- Separator -->
+    <Line endX="380" endY="90" startX="20" startY="90" styleClass="ticket-separator" />
+
+    <!-- Purchase items -->
+    <VBox fx:id="itemsContainer" spacing="10" AnchorPane.bottomAnchor="120" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="100">
+        <Label styleClass="ticket-section-title" text="ACHATS" />
+
+        <!-- Sample item (will be populated dynamically) -->
+        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="ticket-item">
+            <Label styleClass="ticket-quantity" text="1x" />
+            <Label styleClass="ticket-product-name" text="Produit 1" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label styleClass="ticket-price" text="150.00 DT" />
+        </HBox>
+
+        <!-- More items would be added here -->
+    </VBox>
+
+    <!-- Total section -->
+    <VBox alignment="CENTER_RIGHT" spacing="5" AnchorPane.bottomAnchor="70" AnchorPane.rightAnchor="20">
+        <HBox alignment="CENTER_RIGHT" spacing="10">
+            <Label styleClass="ticket-total-label" text="Total:" />
+            <Label fx:id="totalPriceLabel" styleClass="ticket-total-price" text="0.00 DT" />
+        </HBox>
+    </VBox>
+
+    <!-- Footer -->
+    <VBox alignment="CENTER" spacing="5" styleClass="ticket-footer" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+        <Label styleClass="ticket-thanks" text="Merci pour votre achat !" />
+        <Label styleClass="ticket-number" text="Ticket N°: #0001" />
+    </VBox>
+</AnchorPane>
