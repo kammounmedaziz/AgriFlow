@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="gestions.ferme.controllers.AgriculteurTasksController"
+            stylesheets="@agriculteur_tasks.css"
+            prefHeight="600" prefWidth="1000">
+
+
+    <top>
+        <HBox styleClass="header" prefHeight="80" alignment="CENTER" spacing="20">
+            <ImageView fitHeight="60" fitWidth="60" styleClass="logo">
+                <Image url="@/images/agriflow-logo.png" />
+            </ImageView>
+            <Label text="ESPACE AGRICULTEUR" styleClass="title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+<!--            <Button styleClass="logout-button" text="Déconnexion" onAction="#handleLogout"/>-->
+        </HBox>
+    </top>
+
+
+    <center>
+        <VBox alignment="CENTER" spacing="50">
+            <HBox alignment="CENTER" spacing="40">
+
+                <VBox alignment="CENTER" spacing="20" styleClass="task-card">
+                    <ImageView fitHeight="120" fitWidth="120" styleClass="task-icon">
+                        <Image url="@/images/animal.jpg"/>
+                    </ImageView>
+<!--                    <Button text="Gérer Animaux" styleClass="task-button" onAction="#goToAnimalManagement">-->
+<!--                        <graphic>-->
+<!--                            <ImageView fitHeight="24" fitWidth="24">-->
+<!--                                <Image url="@/images/champ.jpg"/>-->
+<!--                            </ImageView>-->
+<!--                        </graphic>-->
+<!--                    </Button>-->
+                </VBox>
+
+
+                <VBox alignment="CENTER" spacing="20" styleClass="task-card">
+                    <ImageView fitHeight="120" fitWidth="120" styleClass="task-icon">
+
+                    </ImageView>
+<!--                    <Button text="Gérer Champs" styleClass="task-button" onAction="#goToFieldManagement">-->
+<!--                        <graphic>-->
+<!--                            <ImageView fitHeight="24" fitWidth="24">-->
+<!--                                <Image url="@/images/champ.jpg"/>-->
+<!--                            </ImageView>-->
+<!--                        </graphic>-->
+<!--                    </Button>-->
+                </VBox>
+
+                <VBox alignment="CENTER" spacing="20" styleClass="task-card">
+                    <ImageView fitHeight="120" fitWidth="120" styleClass="task-icon">
+
+                    </ImageView>
+<!--                    <Button text="Gérer Capteur" styleClass="task-button" onAction="#goToCapteur">-->
+<!--                        <graphic>-->
+<!--                            <ImageView fitHeight="24" fitWidth="24">-->
+<!--                                <Image url="@/images/champ.jpg"/>-->
+<!--                            </ImageView>-->
+<!--                        </graphic>-->
+<!--                    </Button>-->
+                </VBox>
+
+                <VBox alignment="CENTER" spacing="20" styleClass="task-card">
+                    <ImageView fitHeight="120" fitWidth="120" styleClass="task-icon">
+
+                    </ImageView>
+<!--&lt;!&ndash;                    <Button text="Gérer Champs" styleClass="task-button" onAction="#goToStock">&ndash;&gt;-->
+<!--                        <graphic>-->
+<!--                            <ImageView fitHeight="24" fitWidth="24">-->
+<!--                                <Image url="@/images/champ.jpg"/>-->
+<!--                            </ImageView>-->
+<!--                        </graphic>-->
+<!--                    </Button>-->
+                </VBox>
+            </HBox>
+
+
+
+        </VBox>
+    </center>
+
+</BorderPane>

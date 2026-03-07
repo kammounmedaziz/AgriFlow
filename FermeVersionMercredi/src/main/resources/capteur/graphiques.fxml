@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="gestions.ferme.controllers.GraphiquesController"
+            stylesheets="@../../../../FermeVersion/src/main/resources/capteur/capteur.css"
+            prefHeight="700" prefWidth="1000">
+
+    <top>
+        <HBox styleClass="header" prefHeight="80" alignment="CENTER" spacing="20">
+            <Label text="GRAPHIQUES DES CAPTEURS" styleClass="title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button styleClass="cart-button" text="Retour" onAction="#handleReturn"/>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox styleClass="action-sidebar" spacing="15" prefWidth="200">
+            <padding><Insets top="20" right="10" bottom="20" left="10"/></padding>
+            <Label text="SÉLECTION" styleClass="section-title"/>
+            <Label text="ID Capteur:"/>
+            <TextField fx:id="capteurIdField"/>
+            <Button text="Afficher" onAction="#afficherGraphiques" styleClass="sidebar-button"/>
+            <Separator/>
+            <Label text="TYPE DE DONNÉES" styleClass="section-title"/>
+            <CheckBox fx:id="temperatureCheck" text="Température" selected="true"/>
+            <CheckBox fx:id="humidityCheck" text="Humidité" selected="true"/>
+            <CheckBox fx:id="ultrasonCheck" text="Ultrason" selected="true"/>
+        </VBox>
+    </left>
+
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true">
+            <VBox spacing="20" alignment="TOP_CENTER">
+                <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+                
+                <TitledPane text="Température et Humidité" expanded="true">
+                    <BarChart fx:id="tempHumidityChart" title="Température et Humidité">
+                        <xAxis><CategoryAxis label="Date"/></xAxis>
+                        <yAxis><NumberAxis label="Valeur"/></yAxis>
+                    </BarChart>
+                </TitledPane>
+                
+                <TitledPane text="Ultrason" expanded="true">
+                    <LineChart fx:id="ultrasonChart" title="Mesures Ultrason">
+                        <xAxis><CategoryAxis label="Date"/></xAxis>
+                        <yAxis><NumberAxis label="Valeur"/></yAxis>
+                    </LineChart>
+                </TitledPane>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

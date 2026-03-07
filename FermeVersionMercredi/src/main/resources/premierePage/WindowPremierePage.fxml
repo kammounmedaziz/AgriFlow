@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" stylesheets="@FirstPage.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestions.ferme.controllers.WindowPremierePageController">
+
+
+    <ImageView fitHeight="600" fitWidth="1000" preserveRatio="false">
+        <Image url="@../images/first background.png" />
+    </ImageView>
+
+
+    <Pane opacity="0.43" prefHeight="600" prefWidth="1000" styleClass="dark-overlay" />
+
+
+    <VBox alignment="CENTER" prefHeight="600" prefWidth="1000" spacing="50">
+
+        <VBox alignment="CENTER" spacing="10">
+            <ImageView fitHeight="120" fitWidth="120" styleClass="leaf-icon">
+                <Image url="@../images/leaf-icon.png" />
+            </ImageView>
+            <Label styleClass="welcome-title" text="AGRIFLOW" textFill="WHITE" />
+            <Line endX="350" startX="150" styleClass="decoration-line" />
+        </VBox>
+
+
+        <Button fx:id="btnCommencer" onAction="#commencer"  styleClass="start-button" text="COMMENCER" />
+    </VBox>
+</AnchorPane>

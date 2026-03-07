@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestions.ferme.controllers.WindowTicketPaiementController">
+    <Label fx:id="dateLabel" layoutX="10.0" layoutY="78.0" styleClass="ticket-label" text="Date : 14/05/2025" />
+    <Label fx:id="clientNameLabel" layoutX="10.0" layoutY="137.0" styleClass="ticket-label" text="Client : Jean Dupont" />
+    <Label fx:id="paymentMethodLabel" layoutY="162.0" styleClass="ticket-label" text="Méthode : Carte Bancaire" />
+    <Label fx:id="cityLabel" layoutX="10.0" layoutY="109.0" styleClass="ticket-label" text="Ville : Tunis" />
+    <Label fx:id="totalLabel" layoutX="10.0" layoutY="200.0" styleClass="ticket-total" text="Total Payé : 120.00 dt" />
+    <Button fx:id="closeButton" layoutX="254.0" layoutY="269.0" onAction="#closeWindow" text="Fermer" />
+
+</AnchorPane>

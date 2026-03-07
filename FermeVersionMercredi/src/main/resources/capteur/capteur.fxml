@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.web.WebView?>
+
+<BorderPane prefHeight="700" prefWidth="1200" stylesheets="@../../../../FermeVersion/src/main/resources/capteur/capteur.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestions.ferme.controllers.Window1Controller">
+
+    <!-- Top Header -->
+    <top>
+        <HBox alignment="CENTER" prefHeight="80" spacing="20" styleClass="header">
+<!--            <ImageView fitHeight="60" fitWidth="60" styleClass="logo">-->
+<!--                <Image url="@/images/agriflow-logo.png" />-->
+<!--            </ImageView>-->
+            <Label styleClass="title" text="GESTION DES CAPTEURS" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button onAction="#handleReturn" styleClass="cart-button" text="Retour" />
+        </HBox>
+    </top>
+
+    <!-- Left Side - Sensor Actions -->
+    <left>
+        <VBox styleClass="action-sidebar" spacing="15" prefWidth="200" prefHeight="700">
+            <Label styleClass="section-title" text="ACTIONS" />
+
+            <Button onAction="#showAddCapteurForm" styleClass="sidebar-button" text="Ajouter Capteur">
+                <graphic>
+<!--                    <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">-->
+<!--                        <Image url="@/images/add-icon.png"/>-->
+<!--                    </ImageView>-->
+                </graphic>
+            </Button>
+
+            <Button fx:id="editButton" disable="false" onAction="#showEditCapteurForm" styleClass="sidebar-button" text="Modifier">
+                <graphic>
+<!--                    <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">-->
+<!--                        <Image url="@/images/edit-icon.png"/>-->
+<!--                    </ImageView>-->
+                </graphic>
+            </Button>
+
+            <Button fx:id="deleteButton" disable="false" onAction="#deleteCapteur" styleClass="sidebar-button" text="Supprimer">
+                <graphic>
+<!--                    <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">-->
+<!--                        <Image url="@/images/delete-icon.png"/>-->
+<!--                    </ImageView>-->
+                </graphic>
+            </Button>
+
+            <Button onAction="#showGraphiques" styleClass="sidebar-button" text="Visualiser Graphiques">
+                <graphic>
+<!--                    <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">-->
+<!--                        <Image url="@/images/chart-icon.png"/>-->
+<!--                    </ImageView>-->
+                </graphic>
+            </Button>
+
+            <Separator styleClass="sidebar-separator" />
+
+            <Label styleClass="section-title" text="STATISTIQUES" />
+            <Label fx:id="totalCapteursLabel" styleClass="stat-label" text="Total capteurs: 0" />
+            <Label fx:id="activeCapteursLabel" styleClass="stat-label" text="Capteurs actifs: 0" />
+        </VBox>
+    </left>
+
+    <center>
+        <ScrollPane fitToHeight="true" fitToWidth="true" pannable="true" vbarPolicy="ALWAYS">
+            <content>
+                <VBox>
+                    <TableView fx:id="capteurTable" styleClass="product-table">
+                        <columns>
+                            <TableColumn fx:id="idCol" prefWidth="50" text="ID" />
+                            <TableColumn fx:id="nomCol" prefWidth="120" text="Nom" />
+                            <TableColumn fx:id="typeCol" prefWidth="120" text="Type" />
+                            <TableColumn fx:id="emplacementCol" prefWidth="321.0" text="Emplacement" />
+                            <TableColumn fx:id="statutCol" prefWidth="98.0" text="Statut" />
+                            <TableColumn fx:id="actionsCol" prefWidth="104.0" text="Actions" />
+                        </columns>
+                    </TableView>
+                    <VBox fx:id="formContainer" styleClass="form-container" visible="false">
+                        <HBox spacing="10" styleClass="form-header">
+                            <Label fx:id="formTitle" styleClass="form-title" />
+                            <Region HBox.hgrow="ALWAYS" />
+                            <Button onAction="#hideForm" styleClass="close-button">
+                             <graphic>
+<!--                                <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">-->
+<!--                                    <Image url="@/images/close-icon.png"/>-->
+<!--                                </ImageView>-->
+                            </graphic>
+                            </Button>
+                        </HBox>
+
+                        <GridPane hgap="10" styleClass="form-grid" vgap="10">
+                            <Label text="Nom:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                            <TextField fx:id="nomField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                            <Label text="Type:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                            <ComboBox fx:id="typeField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                            <Label text="Emplacement:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                            <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                <TextField fx:id="emplacementField" editable="false" />
+                                <Button onAction="#chooseLocation" styleClass="browse-button" text="Choisir" />
+                            </HBox>
+
+                            <WebView fx:id="mapView" prefHeight="200" prefWidth="400" GridPane.columnIndex="2" GridPane.rowIndex="0" GridPane.rowSpan="4" />
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                        </GridPane>
+
+                        <HBox alignment="CENTER_RIGHT" spacing="10" styleClass="form-button-bar">
+                            <Button onAction="#hideForm" styleClass="cancel-button" text="Annuler" />
+                            <Button onAction="#saveCapteur" styleClass="save-button" text="Enregistrer" />
+                        </HBox>
+                    </VBox>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

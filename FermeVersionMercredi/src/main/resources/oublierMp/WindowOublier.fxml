@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestions.ferme.controllers.WindowOublierController">
+    <stylesheets>
+        <URL value="@ForgetPassword.css" />
+    </stylesheets>
+
+    <BorderPane prefHeight="700" prefWidth="1000">
+        <top>
+            <HBox alignment="CENTER" prefHeight="100" styleClass="header-box">
+                <Label styleClass="header-title" text="récupération de mot de passe" />
+            </HBox>
+        </top>
+
+        <center>
+            <StackPane styleClass="auth-container">
+                <VBox alignment="CENTER" spacing="30" styleClass="auth-form glow-effect">
+                    <!-- Lock Icon -->
+                    <StackPane>
+                        <SVGPath content="M12,17A2,2 0 0,0 14,15C14,13.89 13.1,13 12,13A2,2 0 0,0 10,15A2,2 0 0,0 12,17M18,8A2,2 0 0,1 20,10V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V10C4,8.89 4.9,8 6,8H7V6A5,5 0 0,1 12,1A5,5 0 0,1 17,6V8H18M12,3A3,3 0 0,0 9,6V8H15V6A3,3 0 0,0 12,3Z" styleClass="lock-icon" />
+                    </StackPane>
+
+                    <!-- Instruction Text -->
+                    <Text styleClass="instruction-text" textAlignment="CENTER" wrappingWidth="400">
+                        Entrez votre adresse e-mail et nous vous enverrons votre nouveau mot de passe
+                    </Text>
+
+                    <!-- Email Field -->
+                    <VBox spacing="5" styleClass="input-field">
+                        <Label styleClass="input-label" text="ADRESSE EMAIL:" />
+                        <TextField fx:id="emailField" prefHeight="57.0" prefWidth="920.0" promptText="votremail@email.com" styleClass="auth-input" />
+                    </VBox>
+
+                    <!-- Submit Button -->
+                    <Button fx:id="resetButton" onAction="#handleResetPassword" prefWidth="275.0" styleClass="send-reset-btn" text="Envoyer mot de passe" />
+
+                    <!-- Back to Login Link -->
+                    <HBox alignment="CENTER" spacing="5">
+                        <Label styleClass="link-text" text="Vous vous souvenez de votre mot de passe ?" />
+                        <Hyperlink fx:id="backToLogin" onAction="#handleBackToLogin"  styleClass="auth-link" text="login" />
+                    </HBox>
+                </VBox>
+            </StackPane>
+        </center>
+
+    </BorderPane>
+</AnchorPane>

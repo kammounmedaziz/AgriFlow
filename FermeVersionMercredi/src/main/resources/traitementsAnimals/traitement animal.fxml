@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="600" prefWidth="1000" stylesheets="@traitement_animal.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestions.ferme.controllers.WindowTraitementAnimalController">
+
+    <top>
+        <HBox alignment="CENTER" prefHeight="80" spacing="20" styleClass="header">
+            <ImageView fitHeight="60" fitWidth="60" styleClass="logo">
+                <Image url="@/images/agriflow-logo.png" />
+            </ImageView>
+            <Label styleClass="title" text="SYSTÈME DE TRAITEMENT ANIMAL" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button onAction="#handleSignOut" styleClass="signout-button" text="Déconnexion">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+<!--                        <Image url="@/images/signout-icon-white.png" />-->
+                    </ImageView>
+                </graphic>
+            </Button>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox prefWidth="220" styleClass="sidebar">
+            <Label styleClass="category-header" text="ACTIONS" />
+            <VBox prefHeight="201.0" prefWidth="197.0" spacing="5" styleClass="category-container">
+                <ToggleButton fx:id="btnAjoutTrai" onAction="#AjoutTraitement" prefWidth="165.0" selected="true" styleClass="action-button" text="Traitement d'Ajout" />
+                <ToggleButton fx:id="btnAnimauuxMalad" onAction="#AnimauuxMalad" prefWidth="208.0" styleClass="action-button" text="Animaux malades" />
+            <ToggleButton fx:id="btnRapelTraitement" onAction="#RapelTraitement" prefWidth="208.0" styleClass="action-button" text="Historique Traitements" />
+            </VBox>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane>
+            <!-- Grid for sick animals -->
+            <GridPane id="animalGrid" styleClass="animal-grid" visible="true">
+                <!-- Grid content will be populated dynamically -->
+            </GridPane>
+
+            <!-- Treatment form (hidden by default) -->
+            <VBox fx:id="treatmentForm" id="treatmentForm" spacing="10" styleClass="treatment-form">
+                <Label styleClass="form-header" text="FORMULAIRE DE TRAITEMENT" />
+
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label styleClass="form-label" text="ID Animal:" />
+                    <TextField fx:id="idAnimalField" promptText="Entrez l'ID de l'animal" styleClass="form-input" />
+                </HBox>
+
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label styleClass="form-label" text="État Animal:" />
+                    <ComboBox fx:id="etatAnimalCombo" promptText="Sélectionnez l'état" styleClass="form-input">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="animal Malad" />
+                                <String fx:value="en cours" />
+                                <String fx:value="animal sein" />
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                </HBox>
+
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label styleClass="form-label" text="Type de Traitement:" />
+                    <TextField fx:id="typeTraitementField" promptText="Entrez le type de traitement" styleClass="form-input" />
+                </HBox>
+
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label styleClass="form-label" text="Type de Médicament:" />
+                    <TextField fx:id="typeMedicamentField" promptText="Entrez le type de médicament" styleClass="form-input" />
+                </HBox>
+
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label styleClass="form-label" text="Anomalie:" />
+                    <TextField fx:id="anomalieField" promptText="Décrivez l'anomalie" styleClass="form-input" />
+                </HBox>
+
+                <HBox alignment="CENTER" spacing="20">
+                    <Button onAction="#saveTreatment" styleClass="form-button" text="Enregistrer" />
+                    <Button onAction="#cancelTreatment" styleClass="form-button cancel" text="Annuler" />
+                </HBox>
+            </VBox>
+        </StackPane>
+    </center>
+
+    <bottom>
+        <TableView fx:id="treatmentTable" styleClass="traitement-table">
+            <columns>
+                <TableColumn fx:id="idCol" prefWidth="101.33334589004517" text="ID Animal " />
+                <TableColumn fx:id="EtatCol" prefWidth="181.33332061767578" text="Etat" />
+                <TableColumn fx:id="RaceCol" minWidth="0.0" prefWidth="129.3333740234375" text="Race" />
+                <TableColumn fx:id="dateCol" prefWidth="162.00003051757812" text="Date de naissance" />
+            </columns>
+        </TableView>
+    </bottom>
+
+</BorderPane>

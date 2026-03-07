@@ -1,0 +1,215 @@
+/* ========== BASE STYLES ========== */
+.root {
+    -fx-font-family: 'Arial';
+    -fx-background-color: #f5f5f5;
+}
+
+/* ========== HEADER STYLES ========== */
+.header {
+    -fx-background-color: linear-gradient(to right, #0d1b2a, #1b263b);
+    -fx-border-color: #00ff88;
+    -fx-border-width: 0 0 3px 0;
+    -fx-padding: 0 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(11, 235, 155, 0.3), 20, 0, 0, 0);
+}
+
+.title {
+    -fx-text-fill: #00ffaa;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0, 255, 170, 0.3), 5, 0, 0, 1);
+    -fx-padding: 0 20px;
+}
+
+
+
+.cart-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #00ffaa;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 15px;
+    -fx-content-display: RIGHT;
+    -fx-graphic-text-gap: 10px;
+    -fx-cursor: hand;
+}
+
+.cart-button:hover {
+    -fx-text-fill: #00ffdd;
+    -fx-background-color: rgba(0, 255, 170, 0.1);
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+
+.action-sidebar {
+    -fx-background-color: rgba(13, 27, 42, 0.95);
+    -fx-border-color: #00ffaa;
+    -fx-border-width: 0 3px 0 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,170,0.2), 20, 0, 0, 0);
+}
+
+.section-title {
+    -fx-text-fill: #84beb7;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 5px 0;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.sidebar-button {
+    -fx-pref-width: 160px;
+    -fx-pref-height: 50px;
+    -fx-background-color: rgba(0, 255, 170, 0.1);
+    -fx-text-fill: #8fabea;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-border-color: linear-gradient(to right, #00ffaa33, #00ffaa);
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-alignment: CENTER;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,170,0.1), 10, 0, 0, 0);
+    -fx-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-button:hover {
+    -fx-background-color: rgba(0, 255, 170, 0.2);
+    -fx-text-fill: #00ffdd;
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,170,0.3), 15, 0, 0, 2);
+}
+
+.sidebar-button:disabled {
+    -fx-opacity: 0.7;
+    -fx-background-color: #95a5a6;
+}
+
+.sidebar-separator {
+    -fx-padding: 10px 0;
+}
+
+.stat-label {
+    -fx-text-fill: #657788;
+    -fx-font-size: 14px;
+    -fx-padding: 5px 0 5px 10px;
+}
+
+/* ========== TABLE STYLES ========== */
+.animal-table {
+    -fx-background-color: white;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 1);
+    -fx-padding: 10px;
+}
+
+.animal-table .column-header {
+    -fx-background-color: #1b263b;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.animal-table .table-row-cell:odd {
+    -fx-background-color: #f9f9f9;
+}
+
+.animal-table .table-row-cell:selected {
+    -fx-background-color: #00b4d8;
+    -fx-text-fill: white;
+}
+
+.animal-table .table-cell {
+    -fx-padding: 8px;
+    -fx-border-color: transparent;
+}
+
+/* ========== FORM STYLES ========== */
+.form-container {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1px 0 0 0;
+    -fx-padding: 15px;
+    -fx-spacing: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);
+}
+
+.form-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1b263b;
+}
+
+.form-header {
+    -fx-padding: 0 0 10px 0;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.form-grid {
+    -fx-padding: 0 20px;
+}
+
+.form-grid Label {
+    -fx-text-fill: #34495e;
+    -fx-font-weight: bold;
+}
+
+.form-grid ComboBox,
+.form-grid TextField,
+.form-grid DatePicker,
+.form-grid Spinner {
+    -fx-pref-width: 200px;
+    -fx-pref-height: 30px;
+    -fx-background-radius: 5px;
+}
+
+.close-button {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.close-button:hover {
+    -fx-background-color: #f0f0f0;
+}
+
+/* ========== BUTTON STYLES ========== */
+.save-button {
+    -fx-background-color: #00c853;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 20px;
+    -fx-background-radius: 5px;
+}
+
+.save-button:hover {
+    -fx-background-color: #00e676;
+}
+
+.cancel-button {
+    -fx-background-color: #e0e0e0;
+    -fx-text-fill: #1b263b;
+    -fx-padding: 8px 20px;
+    -fx-background-radius: 5px;
+}
+
+.cancel-button:hover {
+    -fx-background-color: #d0d0d0;
+}
+
+/* ========== RESPONSIVE ADJUSTMENTS ========== */
+@media (max-width: 1000px) {
+    .action-sidebar {
+        -fx-pref-width: 180px;
+    }
+
+    .form-grid ComboBox,
+    .form-grid TextField,
+    .form-grid DatePicker,
+    .form-grid Spinner {
+        -fx-pref-width: 180px;
+    }
+}

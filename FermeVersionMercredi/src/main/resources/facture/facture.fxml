@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Agriflow.FrontEnd.GestionFacturesController"
+            stylesheets="@facture.css"
+            prefHeight="600" prefWidth="1000">
+
+    <!-- Top Header -->
+    <top>
+        <HBox styleClass="header" prefHeight="80" alignment="CENTER" spacing="20">
+            <ImageView fitHeight="60" fitWidth="60" styleClass="logo">
+                <Image url="@/images/agriflow-logo-white.png" />
+            </ImageView>
+            <Label text="GESTION DES FACTURES" styleClass="title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button styleClass="cart-button" text="Retour" onAction="#handleReturn"/>
+        </HBox>
+    </top>
+
+    <!-- Left Side - Invoice Actions -->
+    <left>
+        <VBox styleClass="action-sidebar" spacing="15" prefWidth="200" prefHeight="700">
+            <Label text="ACTIONS" styleClass="section-title"/>
+
+            <Button text="Nouvelle Facture" styleClass="sidebar-button" onAction="#showAddFactureForm">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                        <Image url="@/images/add-icon.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <Button text="Modifier" styleClass="sidebar-button" onAction="#showEditFactureForm" disable="true" fx:id="editButton">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                        <Image url="@/images/edit-icon.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <Button text="Supprimer" styleClass="sidebar-button" onAction="#deleteFacture" disable="true" fx:id="deleteButton">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                        <Image url="@/images/delete-icon.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <Button text="Exporter PDF" styleClass="sidebar-button" onAction="#exportToPDF" fx:id="exportButton">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                        <Image url="@/images/pdf-icon.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <Separator styleClass="sidebar-separator"/>
+
+            <Label text="STATISTIQUES" styleClass="section-title"/>
+            <Label fx:id="totalFacturesLabel" styleClass="stat-label" text="Total factures: 0"/>
+            <Label fx:id="totalRevenueLabel" styleClass="stat-label" text="Revenue total: 0 €"/>
+        </VBox>
+    </left>
+
+    <center>
+        <TableView fx:id="factureTable" styleClass="product-table">
+            <columns>
+                <TableColumn text="ID" fx:id="idCol" prefWidth="50"/>
+                <TableColumn text="Client (CIN)" fx:id="clientCinCol" prefWidth="120"/>
+                <TableColumn text="Date" fx:id="dateCol" prefWidth="100"/>
+                <TableColumn text="Montant" fx:id="montantCol" prefWidth="80"/>
+                <TableColumn text="Rendu" fx:id="renduCol" prefWidth="80"/>
+                <TableColumn text="Adresse" fx:id="adresseCol" prefWidth="150"/>
+                <TableColumn text="Actions" fx:id="actionsCol" prefWidth="120"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <VBox fx:id="formContainer" styleClass="form-container" visible="false">
+            <HBox styleClass="form-header" spacing="10">
+                <Label fx:id="formTitle" styleClass="form-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button styleClass="close-button" onAction="#hideForm">
+                    <graphic>
+                        <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                            <Image url="@/images/close-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </HBox>
+
+            <GridPane styleClass="form-grid" hgap="10" vgap="10">
+                <Label text="CIN Client:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="cinClientField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Date Facture:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <DatePicker fx:id="dateFactureField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Montant Total:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="montantField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="Rendu:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <TextField fx:id="renduField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                <Label text="Adresse:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <TextArea fx:id="adresseField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <HBox styleClass="form-button-bar" spacing="10" alignment="CENTER_RIGHT">
+                <Button text="Annuler" styleClass="cancel-button" onAction="#hideForm"/>
+                <Button text="Enregistrer" styleClass="save-button" onAction="#saveFacture"/>
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>

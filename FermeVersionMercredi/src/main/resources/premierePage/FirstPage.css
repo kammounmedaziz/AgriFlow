@@ -1,0 +1,94 @@
+/* ========== BASE STYLES ========== */
+.root {
+    -fx-font-family: 'Arial';
+    -fx-font-smoothing-type: lcd;
+}
+
+/* ========== BACKGROUND IMAGE ========== */
+.image-view {
+    -fx-opacity: 1.0;
+}
+
+/* ========== DARK OVERLAY ========== */
+.dark-overlay {
+    -fx-background-color: rgba(10, 25, 41, 0.7); /* Dark blue overlay */
+}
+
+/* ========== CONTENT CONTAINER ========== */
+.vbox {
+    -fx-alignment: center;
+    -fx-spacing: 50px;
+}
+
+/* ========== TITLE SECTION ========== */
+.welcome-title {
+    -fx-text-fill: #00ffaa; /* AgriFlow neon green */
+    -fx-font-size: 48px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0, 255, 170, 0.5), 10, 0, 0, 2);
+    -fx-padding: 10px 0;
+}
+
+/* ========== DECORATIVE ELEMENTS ========== */
+.leaf-icon {
+    -fx-effect: dropshadow(gaussian, rgba(0, 255, 170, 0.5), 15, 0, 0, 0);
+}
+
+.decoration-line {
+    -fx-stroke: #00ffaa;
+    -fx-stroke-width: 2px;
+    -fx-opacity: 0.8;
+    -fx-effect: dropshadow(gaussian, rgba(0, 255, 170, 0.3), 5, 0, 0, 0);
+}
+
+/* ========== START BUTTON ========== */
+.start-button {
+    -fx-pref-width: 250px;
+    -fx-pref-height: 60px;
+    -fx-background-color: linear-gradient(to right, #00c853, #00b4d8);
+    -fx-text-fill: #0a1929;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 200, 83, 0.3), 0, 0, 0, 3);
+    -fx-transition: all 0.3s ease;
+}
+
+.start-button:hover {
+    -fx-background-color: linear-gradient(to right, #00e676, #00c8ff);
+    -fx-effect: dropshadow(gaussian, rgba(0, 255, 170, 0.6), 0, 0, 0, 5);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.start-button:pressed {
+    -fx-background-color: linear-gradient(to right, #00b248, #00a1d6);
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 2);
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+/* ========== RESPONSIVE ADJUSTMENTS ========== */
+@media (max-width: 900px) {
+    .welcome-title {
+        -fx-font-size: 36px;
+    }
+
+    .start-button {
+        -fx-pref-width: 200px;
+        -fx-pref-height: 50px;
+        -fx-font-size: 16px;
+    }
+
+    .leaf-icon {
+        -fx-fit-height: 80px;
+        -fx-fit-width: 80px;
+    }
+
+    .decoration-line {
+        -fx-end-x: 300px;
+        -fx-start-x: 100px;
+    }
+}

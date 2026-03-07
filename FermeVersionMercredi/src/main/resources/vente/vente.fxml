@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="mainContainer" prefHeight="600" prefWidth="1000" stylesheets="@vente.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestions.ferme.controllers.WindowVenteController">
+
+    <top>
+        <HBox alignment="CENTER" prefHeight="80" spacing="20" styleClass="header">
+            <ImageView fitHeight="60" fitWidth="60" styleClass="logo">
+                <Image url="@/images/agriflow-logo.png" />
+            </ImageView>
+            <Label styleClass="title" text="BOUTIQUE AGRIFLOW" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="btnAvisReclamation" onAction="#AvisReclamationVentes" styleClass="signout-button" text="Avis et Réclamations">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                        <Image url="@/images/feedback-icon-white.png" />
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button fx:id="btnPanier" mnemonicParsing="false" onAction="#PanierVentes" styleClass="signout-button" text="Panier (0)">
+                <graphic>
+                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                        <Image url="@/images/cart-icon.png" />
+                    </ImageView>
+                </graphic>
+            </Button>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox prefWidth="220" styleClass="sidebar">
+            <Label styleClass="category-header" text="CATÉGORIES" />
+            <VBox spacing="5" styleClass="category-container">
+                <ToggleButton fx:id="btnTousProduits" onAction="#TousProduits" selected="true" styleClass="category-button" text="Tous les produits" />
+                <ToggleButton fx:id="btnFruits" onAction="#FruitsVentes" styleClass="category-button" text="Fruits" />
+                <ToggleButton fx:id="btnLegumes" onAction="#LegumesVentes" styleClass="category-button" text="Legumes" />
+                <ToggleButton fx:id="btnProduitsLaitiers" onAction="#ProduitsLaitiersVentes" styleClass="category-button" text="Produits laitiers" />
+                <ToggleButton fx:id="btnViandes" onAction="#ViandesVentes" styleClass="category-button" text="Viandes" />
+                <ToggleButton fx:id="btnProduitsBio" onAction="#ProduitsBioVentes" styleClass="category-button" text="Produits bio" />
+            </VBox>
+
+            <VBox spacing="8" styleClass="filter-container">
+                <Label styleClass="filter-header" text="FILTRES" />
+                <CheckBox fx:id="radioPromo" onAction="#PromoVentes" styleClass="filter-checkbox" text="En promotion" />
+            </VBox>
+        </VBox>
+    </left>
+
+    <center>
+        <ScrollPane fitToHeight="true" fitToWidth="true" styleClass="product-scroll">
+            <FlowPane fx:id="productContainer" hgap="10" prefHeight="600" prefWidth="1000" styleClass="product-grid" vgap="10" />
+        </ScrollPane>
+    </center>
+
+</BorderPane>

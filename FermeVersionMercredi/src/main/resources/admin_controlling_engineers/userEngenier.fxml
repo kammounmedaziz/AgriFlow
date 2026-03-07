@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="600" prefWidth="1000" stylesheets="@utilisateurs.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestions.ferme.controllers.WindowIngenieurController">
+
+    <!-- Top Header -->
+    <top>
+        <HBox alignment="CENTER" prefHeight="80" spacing="20" styleClass="header">
+            <ImageView fitHeight="60" fitWidth="60" styleClass="logo">
+                <Image url="@/images/agriflow-logo-white.png" />
+            </ImageView>
+            <Label styleClass="title" text="GESTION DES INGENIEURS " />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="BtReturnPageAdmin" onAction="#ReturnPageAdmin" styleClass="cart-button" text="Retour" />
+        </HBox>
+    </top>
+
+    <!-- Left Sidebar (Actions) -->
+    <left>
+        <VBox prefWidth="200" spacing="15" styleClass="action-sidebar">
+            <Label styleClass="section-title" text="ACTIONS" />
+
+            <Button fx:id="addButton" onAction="#showAddUserForm" styleClass="sidebar-button" text="Ajouter">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20">
+
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <Button fx:id="editButton" disable="true" onAction="#showEditUserForm" styleClass="sidebar-button" text="Modifier">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20">
+
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <Button fx:id="deleteButton" disable="true" onAction="#deleteUser" styleClass="sidebar-button" text="Supprimer">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20">
+
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <Separator styleClass="sidebar-separator" />
+
+            <Label styleClass="section-title" text="STATISTIQUES" />
+            <Label fx:id="totalUsersLabel" styleClass="stat-label" text="Total Utilisateurs: 0" />
+            <Label fx:id="adminCountLabel" styleClass="stat-label" text="Administrateurs: 0" />
+        </VBox>
+    </left>
+
+    <!-- Center Table -->
+    <center>
+        <TableView fx:id="userTable" styleClass="user-table">
+            <columns>
+                <TableColumn fx:id="idCol" prefWidth="80" text="ID" />
+                <TableColumn fx:id="nomCol" prefWidth="120" text="Nom" />
+                <TableColumn fx:id="prenomCol" prefWidth="120" text="Prénom" />
+                <TableColumn fx:id="sexeCol" prefWidth="80" text="Sexe" />
+                <TableColumn fx:id="telephoneCol" prefWidth="120" text="Téléphone" />
+                <TableColumn fx:id="emailCol" prefWidth="180" text="Email" />
+            </columns>
+        </TableView>
+    </center>
+
+    <!-- Bottom Form (Hidden by Default) -->
+    <bottom>
+        <VBox fx:id="formContainer" styleClass="form-container" visible="false">
+            <HBox spacing="10" styleClass="form-header">
+                <Label fx:id="formTitle" styleClass="form-title" text="Ajouter un Utilisateur" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button onAction="#hideForm" styleClass="close-button">
+                    <graphic>
+                        <ImageView fitHeight="16" fitWidth="16">
+                            <Image url="@/images/close-icon.png" />
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </HBox>
+
+            <GridPane hgap="10" styleClass="form-grid" vgap="10">
+                <!-- Row 0 -->
+                <Label text="CIN:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="cinField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label text="Nom:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                <TextField fx:id="nomField" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+                <Label text="Prénom:" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+                <TextField fx:id="prenomField" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+
+                <!-- Row 1 -->
+                <Label text="Sexe:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <ComboBox fx:id="sexeField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+
+                <Label text="Téléphone:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <TextField fx:id="telephoneField" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+                <!-- Row 2 -->
+                <Label text="Email:" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                <TextField fx:id="emailField" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+
+                <Label text="Mot de passe:" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                <PasswordField fx:id="passwordField" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+
+                <Button onAction="#saveUser" styleClass="save-button" text="Enregistrer" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                <Button onAction="#hideForm" styleClass="cancel-button" text="Annuler" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+
+                <columnConstraints>
+                    <ColumnConstraints />
+                    <ColumnConstraints />
+                    <ColumnConstraints />
+                    <ColumnConstraints />
+                    <ColumnConstraints />
+                    <ColumnConstraints />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints />
+                    <RowConstraints />
+                    <RowConstraints />
+                </rowConstraints>
+            </GridPane>
+        </VBox>
+    </bottom>
+</BorderPane>

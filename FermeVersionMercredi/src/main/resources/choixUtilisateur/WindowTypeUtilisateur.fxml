@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            stylesheets="@choiceuser.css"
+            prefHeight="600.0" prefWidth="1000.0" fx:controller="gestions.ferme.controllers.WindowTypeUtilisateurController">
+
+
+
+    <Pane >
+
+        <VBox alignment="CENTER" spacing="30" prefWidth="1000" layoutY="50">
+            <Label text="SÉLECTION D'UTILISATEUR" styleClass="main-title"/>
+
+            <GridPane alignment="CENTER" hgap="15" vgap="20">
+                <columnConstraints>
+                    <ColumnConstraints prefWidth="180"/>
+                    <ColumnConstraints prefWidth="180"/>
+                    <ColumnConstraints prefWidth="180"/>
+                </columnConstraints>
+
+                <VBox styleClass="user-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <ImageView fitWidth="100" fitHeight="100" styleClass="user-image">
+                        <Image url="@/images/agriculteur.png"/>
+                    </ImageView>
+                    <Label text="Agriculteur" styleClass="user-name"/>
+                    <Button fx:id="idUtFermier" onAction="#VerifierExistantFermier"  text="Sélectionner" styleClass="select-button"/>
+                </VBox>
+
+                <VBox styleClass="user-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <ImageView fitWidth="100" fitHeight="100" styleClass="user-image">
+                        <Image url="@/images/veterinaire.png"/>
+                    </ImageView>
+                    <Label text="Vétérinaire" styleClass="user-name"/>
+                    <Button fx:id="idUtVeterenaire" onAction="#VerifierExistantVeterinaire" text="Sélectionner" styleClass="select-button"/>
+                </VBox>
+
+                <VBox styleClass="user-card" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                    <ImageView fitWidth="100" fitHeight="100" styleClass="user-image">
+                        <Image url="@/images/ingenieur.png"/>
+                    </ImageView>
+                    <Label text="Ingenieur" styleClass="user-name"/>
+                    <Button fx:id="idUtIng" onAction="#VerifierExistantIngenier" text="Sélectionner" styleClass="select-button"/>
+                </VBox>
+
+                <VBox styleClass="user-card" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2">
+                    <ImageView fitWidth="100" fitHeight="100" styleClass="user-image">
+                        <Image url="@/images/admin_icon.png"/>
+                    </ImageView>
+                    <Label text="Admin" styleClass="user-name"/>
+                    <Button fx:id="idUtAdmin" onAction="#VerifierExistantAdmin" text="Sélectionner" styleClass="select-button"/>
+                </VBox>
+
+                <VBox styleClass="user-card" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <ImageView fitWidth="100" fitHeight="100" styleClass="user-image">
+                        <Image url="@/images/admin_icon.png"/>
+                    </ImageView>
+                    <Label text="Client" styleClass="user-name"/>
+                    <Button  fx:id="idUtClient" onAction="#VerifierExistantClient" text="Sélectionner" styleClass="select-button"/>
+                </VBox>
+            </GridPane>
+        </VBox>
+    </Pane>
+</AnchorPane>

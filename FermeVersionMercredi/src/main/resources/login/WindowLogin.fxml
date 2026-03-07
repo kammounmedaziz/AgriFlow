@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" stylesheets="@/login/login-style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestions.ferme.controllers.WindowLoginController">
+
+    <Pane prefHeight="600" prefWidth="1000" style="-fx-background-color: rgba(255, 255, 255, 0.2);">
+
+        <Pane prefHeight="600.0" prefWidth="1000.0" styleClass="container">
+
+            <Pane layoutX="325.0" layoutY="100" prefHeight="429.0" prefWidth="323.0" styleClass="login-box">
+
+                <VBox alignment="CENTER" layoutX="35" layoutY="40" prefHeight="350.0" prefWidth="241.0" spacing="15">
+                    <Label styleClass="login-title" text="CONNEXION AGRI" />
+                    <Label styleClass="welcome-text" text="Bienvenue dans l'agriculture intelligente" />
+
+                    <TextField fx:id="idUtAuth" prefHeight="40" prefWidth="230" promptText="Identifiant agricole" styleClass="text-field" />
+
+                    <PasswordField fx:id="pwdUtAuth" prefHeight="40" prefWidth="230" promptText="Mot de passe" styleClass="text-field" />
+
+                    <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#Authentifier" prefHeight="40" prefWidth="230" styleClass="login-button" text="Se connecter" />
+                    <Hyperlink fx:id="forgetPassword" onAction="#OublierMotDePasse" styleClass="forgot-password" text="Mot de passe oublié ?" />
+   
+                   <ImageView fitHeight="40" fitWidth="40" styleClass="leaf-icon">
+                       <Image url="@../images/leaf-icon.png" />
+                   </ImageView>
+                </VBox>
+
+                <Line endX="270" layoutX="5.0" layoutY="389.0" startX="30" styleClass="soil-line" />
+
+                 <Hyperlink fx:id="createAccountLink" layoutX="106.0" layoutY="390.0" onAction="#CreerCompte" styleClass="create-account" text="Créer un compte" />
+            </Pane>
+        </Pane>
+    </Pane>
+</AnchorPane>
